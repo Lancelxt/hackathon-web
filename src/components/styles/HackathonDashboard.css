@@ -239,3 +239,77 @@
   background-color: #003145;
   padding: 6% 8%;
 }
+
+/* Media Queries */
+
+/* Tablet (portrait) */
+@media only screen and (max-width: 1024px) {
+  .hero-section {
+    padding: 80px 40px;
+  }
+  .stats-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .stat {
+    margin-bottom: 20px;
+  }
+  .why-participate-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .why-participate-card {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+  .explore-challenges-search {
+    flex-direction: column;
+    align-items: center;
+  }
+  .explore-challenges-search input {
+    width: 100%;
+  }
+  .filter-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .filter-container {
+    width: 100%;
+  }
+}
+
+/* Mobile (portrait) */
+@media only screen and (max-width: 600px) {
+  .hero-section {
+    padding: 40px 20px;
+  }
+  .stats-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .stat {
+    margin-bottom: 10px;
+  }
+  .why-participate-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .why-participate-card {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+  .explore-challenges-search {
+    flex-direction: column;
+    align-items: center;
+  }
+  .explore-challenges-search input {
+    width: 100%;
+  }
+  .filter-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .filter-container {
+    width: 100%;
+  }
+}

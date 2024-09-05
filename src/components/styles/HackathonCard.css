@@ -52,3 +52,74 @@
   display: flex;
   flex-direction: column;
 }
+
+/* Media Queries */
+
+/* Tablet (portrait) */
+@media only screen and (max-width: 1024px) {
+    .card-main {
+      width: 80%;
+      height: 360px;
+      padding-bottom: 360px;
+    }
+    .card-img {
+      height: 150px;
+    }
+    .timer-container {
+      margin-top: 4px;
+    }
+    .timer-container .timer-display {
+      font-size: 1.2rem;
+    }
+    .timer-container .timer-details {
+      font-size: 9px;
+      gap: 10px;
+      margin-left: 12px;
+    }
+  }
+  
+  /* Mobile (portrait) */
+  @media only screen and (max-width: 600px) {
+    .card-main {
+      width: 90%;
+      height: 280px;
+      padding-bottom: 280px;
+    }
+    .card-img {
+      height: 120px;
+    }
+    .timer-container {
+      margin-top: 2px;
+    }
+    .timer-container .timer-display {
+      font-size: 1rem;
+    }
+    .timer-container .timer-details {
+      font-size: 8px;
+      gap: 8px;
+      margin-left: 8px;
+    }
+  }
+  
+  /* Mobile (landscape) */
+  @media only screen and (max-width: 480px) {
+    .card-main {
+      width: 95%;
+      height: 240px;
+      padding-bottom: 240px;
+    }
+    .card-img {
+      height: 100px;
+    }
+    .timer-container {
+      margin-top: 1px;
+    }
+    .timer-container .timer-display {
+      font-size: 0.9rem;
+    }
+    .timer-container .timer-details {
+      font-size: 7px;
+      gap: 6px;
+      margin-left: 6px;
+    }
+  }

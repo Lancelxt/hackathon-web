@@ -50,15 +50,11 @@
   display: flex;
   flex-direction: row;
   gap: 20px;
-  /* padding-bottom:16px; */
 }
 
 .crd2 .btn3 {
   margin-bottom: 8px;
   border-radius: 10px;
-}
-
-.ovr {
 }
 
 .ovr-t {
@@ -78,3 +74,74 @@
   padding-top: 4px;
   padding-bottom: 4px;
 }
+
+
+/* Media Queries */
+
+/* 1440p and above */
+@media (min-width: 1440px) {
+    .hero-section2 .tt {
+      font-size: 48px;
+    }
+  
+    .hero-section2 .th {
+      font-size: 22px;
+    }
+  
+    .hero-section2 .level {
+      width: 7%;
+      font-size: 16px;
+    }
+  
+    .time-section {
+      width: 22%;
+    }
+  }
+  
+  /* 1080p screens */
+  @media (max-width: 1440px) and (min-width: 1080px) {
+    .hero-section2 .tt {
+      font-size: 36px;
+    }
+  
+    .hero-section2 .th {
+      font-size: 16px;
+    }
+  
+    .hero-section2 .level {
+      width: 6%;
+      font-size: 14px;
+    }
+  
+    .time-section {
+      width: 24%;
+    }
+  
+    .crd {
+      padding-inline: 3%;
+    }
+  }
+  
+  /* 720p screens */
+  @media (max-width: 1080px) and (min-width: 720px) {
+    .hero-section2 .tt {
+      font-size: 30px;
+    }
+  
+    .hero-section2 .th {
+      font-size: 14px;
+    }
+  
+    .hero-section2 .level {
+      width: 10%;
+      font-size: 12px;
+    }
+  
+    .time-section {
+      width: 30%;
+    }
+  
+    .crd {
+      padding-inline: 2%;
+    }
+  }
