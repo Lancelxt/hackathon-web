@@ -1,0 +1,57 @@
+.card-main {
+    width: 70%;
+    height: 440px;
+    padding-bottom: 440px;
+    border-radius: 16px;
+}
+
+.card-img {
+    height: 180px;
+    width: auto;
+    max-width: 100%; 
+    object-fit: cover;
+}
+
+.card-content {
+    text-align: center;
+}
+
+.timer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8px;
+
+}
+
+.timer-container .timer-display {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4F4F4F;
+}
+
+.timer-container .timer-details {
+    font-size: 10px;
+    color: #4F4F4F; 
+    font-weight: 500;
+    display: flex; 
+    flex-direction: row;
+    gap: 14px;
+    margin-left: 16px;
+}
+
+.timer-container .t2{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.chip{
+    border-radius: 5px;
+}
+
+.timer-container .t3{
+    display: flex;
+    flex-direction: column;
+   
+}
+
