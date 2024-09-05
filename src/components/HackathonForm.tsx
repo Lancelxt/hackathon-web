@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useRef } from 'react';
+import React, { useContext, useState, useEffect, useRef } from "react";
 import {
   Box,
   TextField,
@@ -10,28 +10,26 @@ import {
   MenuItem,
   SelectChangeEvent,
   Input,
-} from '@mui/material';
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import { HackathonContext, Hackathon } from '../contexts/HackathonContext';
-import { useNavigate, useParams } from 'react-router-dom';
-import "./styles/HackathonDashboard.css"
-import './styles/HackathonForm.css'
-import mainLogo from '../assets/icons/main_logo_with_darktext_dphi 1.svg';
-
-
+} from "@mui/material";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import { HackathonContext, Hackathon } from "../contexts/HackathonContext";
+import { useNavigate, useParams } from "react-router-dom";
+import "./styles/HackathonDashboard.css";
+import "./styles/HackathonForm.css";
+import mainLogo from "../assets/icons/main_logo_with_darktext_dphi 1.svg";
 
 const HackathonForm: React.FC = () => {
   const context = useContext(HackathonContext);
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
 
-  const [formData, setFormData] = useState<Omit<Hackathon, 'id'>>({
-    name: '',
-    startDate: '',
-    endDate: '',
-    description: '',
-    image: '',
-    level: 'Easy',
+  const [formData, setFormData] = useState<Omit<Hackathon, "id">>({
+    name: "",
+    startDate: "",
+    endDate: "",
+    description: "",
+    image: "",
+    level: "Easy",
   });
 
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -40,7 +38,9 @@ const HackathonForm: React.FC = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const isEditMode = Boolean(id);
-  const existingHackathon = context?.hackathons.find((hack) => hack.id === Number(id));
+  const existingHackathon = context?.hackathons.find(
+    (hack) => hack.id === Number(id)
+  );
 
   useEffect(() => {
     if (isEditMode && existingHackathon) {
@@ -62,7 +62,9 @@ const HackathonForm: React.FC = () => {
 
   const { addHackathon, updateHackathon } = context;
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -90,7 +92,7 @@ const HackathonForm: React.FC = () => {
     setSelectedFile(null);
     setImagePreview(null);
     if (fileInputRef.current) {
-      fileInputRef.current.click(); // Trigger file input to open file picker
+      fileInputRef.current.click();
     }
   };
 
@@ -115,7 +117,7 @@ const HackathonForm: React.FC = () => {
       addHackathon(hackathonData);
     }
 
-    navigate('/');
+    navigate("/");
   };
 
   const uploadImage = async (file: File): Promise<string> => {
@@ -127,32 +129,41 @@ const HackathonForm: React.FC = () => {
   };
 
   const handleLogoClick = () => {
-    navigate('/');
+    navigate("/");
   };
 
   return (
     <Box>
-     <Box paddingTop={0.4} paddingBottom={0.4} paddingLeft={1} onClick={handleLogoClick}>
-      <img src={mainLogo} alt="DPhi Logo" style={{ width: '88px' }} />
+      <Box
+        paddingTop={0.4}
+        paddingBottom={0.4}
+        paddingLeft={1}
+        onClick={handleLogoClick}
+      >
+        <img src={mainLogo} alt="DPhi Logo" style={{ width: "88px" }} />
       </Box>
-      <Box className='form-c'>
-        <Typography variant="h4" gutterBottom className='hdr'>
-          {isEditMode ? 'Challenge Details' : 'Challenge Details'}
+      <Box className="form-c">
+        <Typography variant="h4" gutterBottom className="hdr">
+          {isEditMode ? "Challenge Details" : "Challenge Details"}
         </Typography>
         <form onSubmit={handleSubmit}>
           <Box display="flex" flexDirection="column" gap={2} paddingLeft={10}>
-            <Typography fontSize={"16px"} fontWeight={"600"} color="#333333">Challenge Name</Typography>
+            <Typography fontSize={"16px"} fontWeight={"600"} color="#333333">
+              Challenge Name
+            </Typography>
             <TextField
               name="name"
               variant="outlined"
               required
               value={formData.name}
               onChange={handleChange}
-              className='tf'
+              className="tf"
             />
-            <Typography fontSize={"16px"} fontWeight={"600"} color="#333333">Start Date</Typography>
+            <Typography fontSize={"16px"} fontWeight={"600"} color="#333333">
+              Start Date
+            </Typography>
             <TextField
-              className='tf'
+              className="tf"
               name="startDate"
               type="datetime-local"
               variant="outlined"
@@ -161,9 +172,11 @@ const HackathonForm: React.FC = () => {
               value={formData.startDate}
               onChange={handleChange}
             />
-            <Typography fontSize={"16px"} fontWeight={"600"} color="#333333">End Date</Typography>
+            <Typography fontSize={"16px"} fontWeight={"600"} color="#333333">
+              End Date
+            </Typography>
             <TextField
-              className='tf'
+              className="tf"
               name="endDate"
               type="datetime-local"
               variant="outlined"
@@ -171,11 +184,12 @@ const HackathonForm: React.FC = () => {
               InputLabelProps={{ shrink: true }}
               value={formData.endDate}
               onChange={handleChange}
-
             />
-            <Typography fontSize={"16px"} fontWeight={"600"} color="#333333">Description</Typography>
+            <Typography fontSize={"16px"} fontWeight={"600"} color="#333333">
+              Description
+            </Typography>
             <TextField
-              className='tf2'
+              className="tf2"
               name="description"
               variant="outlined"
               required
@@ -184,24 +198,32 @@ const HackathonForm: React.FC = () => {
               onChange={handleChange}
               minRows={6}
             />
-            <Typography fontSize={"16px"} fontWeight={"600"} color="#333333">Image Upload</Typography>
+            <Typography fontSize={"16px"} fontWeight={"600"} color="#333333">
+              Image Upload
+            </Typography>
             <Box className="image-upload-container">
               {imagePreview ? (
                 <Box className="image-preview-container">
-                  <img src={imagePreview} alt="Selected file" className="image-preview" />
-                  <Typography className="change-image-text" onClick={handleImageChangeClick}>
+                  <img
+                    src={imagePreview}
+                    alt="Selected file"
+                    className="image-preview"
+                  />
+                  <Typography
+                    className="change-image-text"
+                    onClick={handleImageChangeClick}
+                  >
                     <strong>Change Image</strong>
                   </Typography>
                 </Box>
               ) : (
-                <Box className='up'>
+                <Box className="up">
                   <label htmlFor="upload-button" className="upload-label">
-                  <Typography>Upload</Typography>
+                    <Typography>Upload</Typography>
                   </label>
                   <label htmlFor="upload-button" className="upload-label">
                     <CloudUploadIcon className="upload-icon" />
                   </label>
-                   
                 </Box>
               )}
               <Input
@@ -210,15 +232,17 @@ const HackathonForm: React.FC = () => {
                 type="file"
                 onChange={handleFileChange}
                 inputRef={fileInputRef}
-                inputProps={{ accept: 'image/*' }}
-                style={{ display: 'none' }}
+                inputProps={{ accept: "image/*" }}
+                style={{ display: "none" }}
               />
             </Box>
-            <Typography fontSize={"16px"} fontWeight={"600"} color="#333333" >Level Type</Typography>
+            <Typography fontSize={"16px"} fontWeight={"600"} color="#333333">
+              Level Type
+            </Typography>
             <FormControl variant="outlined">
               <InputLabel>Level</InputLabel>
               <Select
-                className='tf3'
+                className="tf3"
                 name="level"
                 value={formData.level}
                 onChange={handleSelectChange}
@@ -230,14 +254,19 @@ const HackathonForm: React.FC = () => {
               </Select>
             </FormControl>
             <Box display="flex" gap={2} marginTop={2} marginBottom={4}>
-              <Button type="submit" variant="contained" color="success" style={{ textTransform: "none" }}>
-                {isEditMode ? 'Update' : 'Create'}
+              <Button
+                type="submit"
+                variant="contained"
+                color="success"
+                style={{ textTransform: "none" }}
+              >
+                {isEditMode ? "Update" : "Create"}
               </Button>
               <Button
                 style={{ textTransform: "none" }}
                 variant="contained"
                 color="error"
-                onClick={() => navigate('/')}
+                onClick={() => navigate("/")}
               >
                 Cancel
               </Button>
